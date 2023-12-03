@@ -13,11 +13,12 @@
             var numberOfItems = basket.ItemsCount[Item];
             var numberOfSpecialOffers = numberOfItems / Quantity;
 
-            basket.ItemsCount[Item] -= numberOfSpecialOffers;
+            basket.ItemsCount[FreeItem] -= numberOfSpecialOffers;
             basket.Price -= FreeItemPrice * numberOfSpecialOffers;
         }
     }
 }
+
 
 
 
