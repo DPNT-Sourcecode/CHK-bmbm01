@@ -53,9 +53,10 @@ namespace BeFaster.App.Solutions.CHK
 
         private static void ApplyOffers(Basket basket)
         {
-            foreach (var entry in basket.ItemsCount)
+            var keys = basket.ItemsCount.Keys;
+            foreach (var key in keys)
             {
-                var item = Items[entry.Key];
+                var item = Items[key];
 
                 foreach (var specialOffer in item.SpecialOffers)
                 {
@@ -74,3 +75,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
