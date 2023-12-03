@@ -6,11 +6,11 @@ namespace BeFaster.App.Solutions.CHK
     {
         private static readonly Dictionary<char, Item> Items = new Dictionary<char, Item>()
         {
-            { 'A', new Item { Name = 'A', Price = 50, SpecialOffers = new List<SpecialOffer>() { ,  } } },
-            { 'B', new Item { Name = 'B', Price = 30, SpecialOffers = new List<SpecialOffer>() {  } } },
-            { 'C', new Item { Name = 'C', Price = 20, SpecialOffers = new List<SpecialOffer>() } },
-            { 'D', new Item { Name = 'D', Price = 15, SpecialOffers = new List<SpecialOffer>() } },
-            { 'E', new Item { Name = 'E', Price = 40, SpecialOffers = new List<SpecialOffer>() {  } } },
+            { 'A', new Item { Name = 'A', Price = 50 } },
+            { 'B', new Item { Name = 'B', Price = 30 } },
+            { 'C', new Item { Name = 'C', Price = 20 } },
+            { 'D', new Item { Name = 'D', Price = 15 } },
+            { 'E', new Item { Name = 'E', Price = 40 } }
         };
 
         private static readonly List<SpecialOffer> SpecialOffers = new List<SpecialOffer>()
@@ -61,16 +61,9 @@ namespace BeFaster.App.Solutions.CHK
 
         private static void ApplyOffers(Basket basket)
         {
-            var keys = new List<char>(basket.ItemsCount.Keys);
-
-            foreach (var key in keys)
+            foreach (var specialOffer in SpecialOffers)
             {
-                var item = Items[key];
-
-                foreach (var specialOffer in item.SpecialOffers)
-                {
-                    specialOffer.ApplyOffer(basket);
-                }
+                specialOffer.ApplyOffer(basket);
             }
         }
 
@@ -79,14 +72,12 @@ namespace BeFaster.App.Solutions.CHK
             foreach (var entry in basket.ItemsCount)
             {
                 var item = Items[entry.Key];
-                if (entry.Value > 0)
-                {
-                    basket.Price += entry.Value * item.Price;
-                }
+                basket.Price += entry.Value * item.Price;
             }
         }
     }
 }
+
 
 
 
