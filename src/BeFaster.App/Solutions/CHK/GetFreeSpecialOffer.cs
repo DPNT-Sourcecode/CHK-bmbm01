@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BeFaster.App.Solutions.CHK
 {
-    public class Basket
+    public class GetFreeSpecialOffer
     {
-
+        public char Item { get; set; }
     }
 }

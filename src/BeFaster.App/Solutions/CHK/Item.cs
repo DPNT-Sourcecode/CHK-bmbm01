@@ -12,8 +12,7 @@ namespace BeFaster.App.Solutions.CHK
 
         public int Price { get; set; }
 
-        public int SpecialOfferQuantity { get; set; }
-
-        public int SpecialOfferPrice { get; set; }
+        public List<SpecialOffer> SpecialOffers { get; set; }
     }
 }
+

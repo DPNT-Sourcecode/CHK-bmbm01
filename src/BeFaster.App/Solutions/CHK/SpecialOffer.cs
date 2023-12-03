@@ -8,8 +8,7 @@ namespace BeFaster.App.Solutions.CHK
 {
     public class SpecialOffer
     {
-        public char Item { get; set; }
-
         public int Quantity { get; set; }
     }
 }
+
