@@ -6,11 +6,11 @@ namespace BeFaster.App.Solutions.CHK
     {
         private static readonly Dictionary<char, Item> Items = new Dictionary<char, Item>()
         {
+            { 'E', new Item { Name = 'E', Price = 40, SpecialOffers = new List<SpecialOffer>() { new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1, FreeItemPrice = 30 } } } },
             { 'A', new Item { Name = 'A', Price = 50, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Item = 'A', Quantity = 5, Value = 200 }, new DiscountSpecialOffer { Item = 'A', Quantity = 3, Value = 130 } } } },
             { 'B', new Item { Name = 'B', Price = 30, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 } } } },
             { 'C', new Item { Name = 'C', Price = 20, SpecialOffers = new List<SpecialOffer>() } },
-            { 'D', new Item { Name = 'D', Price = 15, SpecialOffers = new List<SpecialOffer>() } },
-            { 'E', new Item { Name = 'E', Price = 40, SpecialOffers = new List<SpecialOffer>() { new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1, FreeItemPrice = 30 } } } }
+            { 'D', new Item { Name = 'D', Price = 15, SpecialOffers = new List<SpecialOffer>() } }
         };
 
         public static int ComputePrice(string skus)
@@ -79,4 +79,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
