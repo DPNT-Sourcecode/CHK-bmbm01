@@ -71,26 +71,26 @@ namespace BeFaster.App.Solutions.CHK
             { 'D', 15 },
             { 'E', 40 },
             { 'F', 10 },
-            { 'G', 10 },
+            { 'G', 20 },
             { 'H', 10 },
-            { 'I', 10 },
-            { 'J', 10 },
-            { 'K', 10 },
-            { 'L', 10 },
-            { 'M', 10 },
-            { 'N', 10 },
+            { 'I', 35 },
+            { 'J', 60 },
+            { 'K', 80 },
+            { 'L', 90 },
+            { 'M', 15 },
+            { 'N', 40 },
             { 'O', 10 },
-            { 'P', 10 },
-            { 'Q', 10 },
-            { 'R', 10 },
-            { 'S', 10 },
-            { 'T', 10 },
-            { 'U', 10 },
-            { 'V', 10 },
-            { 'W', 10 },
-            { 'X', 10 },
+            { 'P', 50 },
+            { 'Q', 30 },
+            { 'R', 50 },
+            { 'S', 30 },
+            { 'T', 20 },
+            { 'U', 40 },
+            { 'V', 50 },
+            { 'W', 20 },
+            { 'X', 90 },
             { 'Y', 10 },
-            { 'Z', 10 },
+            { 'Z', 50 },
         };
 
         private static List<SpecialOffer> GetSpecialOffers() => new List<SpecialOffer>()
@@ -99,8 +99,12 @@ namespace BeFaster.App.Solutions.CHK
             new GetFreeConditionalSpecialOffer { Item = 'F', Quantity = 3, FreeItem = 'F', FreeItemQuantity = 1, MinimumQuantity = 3 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 5, Value = 200 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 3, Value = 130 },
-            new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 }
+            new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 },
+            new DiscountSpecialOffer { Item = 'H', Quantity = 10, Value = 80 },
+            new DiscountSpecialOffer { Item = 'H', Quantity = 5, Value = 45 },
+            new DiscountSpecialOffer { Item = 'K', Quantity = 2, Value = 150 },
         };
     }
 }
+
 
