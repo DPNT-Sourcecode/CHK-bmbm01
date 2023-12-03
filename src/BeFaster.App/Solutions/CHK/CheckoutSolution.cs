@@ -20,6 +20,10 @@ namespace BeFaster.App.Solutions.CHK
 
             foreach (var sku in skus)
             {
+                if (Items.ContainsKey(sku))
+                {
+                    return -1;
+                }
 
                 if (purchasedItems.ContainsKey(sku))
                 {
@@ -51,6 +55,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
