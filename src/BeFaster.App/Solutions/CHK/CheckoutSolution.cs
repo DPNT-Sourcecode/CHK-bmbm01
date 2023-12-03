@@ -25,43 +25,10 @@ namespace BeFaster.App.Solutions.CHK
 
             ApplyOffers(basket);
 
-            foreach (var sku in skus)
-            {
-                if (!Items.ContainsKey(sku))
-                {
-                    return -1;
-                }
-
-                if (purchasedItems.ContainsKey(sku))
-                {
-                    purchasedItems[sku] += 1;
-                }
-                else
-                {
-                    purchasedItems.Add(sku, 1);
-                }
-            }
-
-            foreach(var entry in purchasedItems)
-            {
-                var item = Items[entry.Key];
-                if (item.SpecialOfferQuantity > 0)
-                {
-                    var regularPriceItems = entry.Value % item.SpecialOfferQuantity;
-                    var specialOfferPrice = (entry.Value - regularPriceItems) / item.SpecialOfferQuantity;
-
-                    price += (regularPriceItems * item.Price) + (specialOfferPrice * item.SpecialOfferPrice);
-                }
-                else
-                {
-                    price += entry.Value * item.Price;
-                }
-            }
-
-            return price;
+            CalculateRegularPrices(basket);
         }
 
-        private static bool FillBasket(Basket basked, string skus)
+        private static bool FillBasket(Basket basket, string skus)
         {
             foreach (var sku in skus)
             {
@@ -70,25 +37,39 @@ namespace BeFaster.App.Solutions.CHK
                     return false;
                 }
 
-                if (basked.ItemsCount.ContainsKey(sku))
+                if (basket.ItemsCount.ContainsKey(sku))
                 {
-                    basked.ItemsCount[sku] += 1;
+                    basket.ItemsCount[sku] += 1;
                 }
                 else
                 {
-                    basked.ItemsCount.Add(sku, 1);
+                    basket.ItemsCount.Add(sku, 1);
                 }
             }
 
             return true;
         }
 
-        private static void ApplyOffers(Basket basked)
+        private static void ApplyOffers(Basket basket)
         {
-            var basket = new Basket();
+            foreach (var entry in basket.ItemsCount)
+            {
+                var item = Items[entry.Key];
+
+                foreach (var specialOffer in item.SpecialOffers)
+                {
+                    specialOffer.ApplyOffer(basket);
+                }
+            }
+        }
+
+        private static void CalculateRegularPrices(Basket basket)
+        {
+
         }
     }
 }
+
 
 
 
