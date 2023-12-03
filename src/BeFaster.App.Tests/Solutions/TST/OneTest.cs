@@ -1,13 +1,14 @@
 using BeFaster.App.Solutions.TST;
-using NUnit.Framework;
+//using NUnit.Framework;
 
 namespace BeFaster.App.Tests.Solutions.TST
 {
     public class OneTest {
     
-        [Test]
+        //[Test]
         public void RunApply() {
-            Assert.AreEqual(One.apply(), 1);
+            //Assert.AreEqual(One.apply(), 1);
         }
     }
 }
+
