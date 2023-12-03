@@ -51,7 +51,7 @@ namespace BeFaster.App.Solutions.CHK
                         }
                         else
                         {
-                            basket.ItemsCount[item.Key] -= itemsFound[item.Key] - (totalCount - remainingItems);
+                            basket.ItemsCount[item.Key] -= totalToRemove;
                             break;
                         }
                     }
@@ -67,9 +67,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
-
-
-
-
