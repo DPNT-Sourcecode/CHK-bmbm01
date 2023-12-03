@@ -74,7 +74,7 @@ namespace BeFaster.App.Solutions.CHK
             { 'H', 10 },
             { 'I', 35 },
             { 'J', 60 },
-            { 'K', 80 },
+            { 'K', 70 },
             { 'L', 90 },
             { 'M', 15 },
             { 'N', 40 },
@@ -82,18 +82,19 @@ namespace BeFaster.App.Solutions.CHK
             { 'P', 50 },
             { 'Q', 30 },
             { 'R', 50 },
-            { 'S', 30 },
+            { 'S', 20 },
             { 'T', 20 },
             { 'U', 40 },
             { 'V', 50 },
             { 'W', 20 },
-            { 'X', 90 },
-            { 'Y', 10 },
-            { 'Z', 50 },
+            { 'X', 17 },
+            { 'Y', 20 },
+            { 'Z', 21 },
         };
 
         private static List<SpecialOffer> GetSpecialOffers() => new List<SpecialOffer>()
         {
+
             new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'N', Quantity = 3, FreeItem = 'M', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'R', Quantity = 3, FreeItem = 'Q', FreeItemQuantity = 1 },
@@ -112,3 +113,4 @@ namespace BeFaster.App.Solutions.CHK
         };
     }
 }
+
