@@ -14,14 +14,28 @@ namespace BeFaster.App.Solutions.CHK
 
         public override void ApplyOffer(Basket basket)
         {
-            for (var item in ItemGroup)
-            {
-                if (basket.ItemsCount[])
-                {
+            var itemsFound = new Dictionary<char, int>();
+            var totalCount = 0;
 
+            foreach (var item in ItemGroup)
+            {
+                if (basket.ItemsCount.ContainsKey(item))
+                {
+                    var count = basket.ItemsCount[item];
+                    itemsFound.Add(item, count);
+                    totalCount += count;
                 }
             }
-            throw new NotImplementedException();
+
+            if (totalCount % Quantity == 0)
+            {
+                // Remove all items from basket
+                // Add multiplier price
+            }
+            else
+            {
+
+            }
         }
 
         private void RemoveItems(Basket basket)
@@ -39,10 +53,11 @@ namespace BeFaster.App.Solutions.CHK
 
         private bool HasEnoughItems()
         {
-
+            
         }
     }
 }
+
 
 
 
