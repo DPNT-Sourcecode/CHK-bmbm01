@@ -5,7 +5,7 @@ namespace BeFaster.App.Solutions.CHK
 {
     public static class CheckoutSolution
     {
-        private static readonly Dictionary<char, Item> Prices = new Dictionary<char, Item>()
+        private static readonly Dictionary<char, Item> Items = new Dictionary<char, Item>()
         {
             { 'A', new Item { Name = 'A', Price = 50, SpecialOfferQuantity = 3, SpecialOfferPrice = 130 } },
             { 'B', new Item { Name = 'B', Price = 30, SpecialOfferQuantity = 2, SpecialOfferPrice = 45 } },
@@ -15,24 +15,44 @@ namespace BeFaster.App.Solutions.CHK
 
         public static int ComputePrice(string skus)
         {
-            var items = new Dictionary<char, int>();
             var price = 0;
+            var purchasedItems = GetPurchsedItemsCount(skus);
 
-            foreach (var sku in skus)
+            foreach(var entry in purchasedItems)
             {
-                if (items.ContainsKey(sku))
+                var item = Items[entry.Key];
+                if (item.SpecialOfferQuantity > 0)
                 {
-                    items[sku] += 1;
+
                 }
                 else
                 {
-                    items.Add(sku, 1);
+                    price += entry.Value * item.Price;
                 }
             }
 
+            return price;
+        }
 
-            throw new SolutionNotImplementedException();
+        private static Dictionary<char, int> GetPurchsedItemsCount(string skus)
+        {
+            var purchasedItems = new Dictionary<char, int>();
+
+            foreach (var sku in skus)
+            {
+                if (purchasedItems.ContainsKey(sku))
+                {
+                    purchasedItems[sku] += 1;
+                }
+                else
+                {
+                    purchasedItems.Add(sku, 1);
+                }
+            }
+
+            return purchasedItems;
         }
     }
 }
+
 
