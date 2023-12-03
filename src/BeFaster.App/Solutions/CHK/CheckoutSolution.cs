@@ -17,8 +17,13 @@ namespace BeFaster.App.Solutions.CHK
         public static int ComputePrice(string skus)
         {
             var basket = new Basket();
-            var purchasedItems = new Dictionary<char, int>();
-            var price = 0;
+
+            if(!FillBasket(basket, skus))
+            {
+                return -1;
+            }
+
+            ApplyOffers(basket);
 
             foreach (var sku in skus)
             {
@@ -56,9 +61,26 @@ namespace BeFaster.App.Solutions.CHK
             return price;
         }
 
-        private static void FillBasket(Basket basked, string skus)
+        private static bool FillBasket(Basket basked, string skus)
         {
-            var basket = new Basket();
+            foreach (var sku in skus)
+            {
+                if (!Items.ContainsKey(sku))
+                {
+                    return false;
+                }
+
+                if (basked.ItemsCount.ContainsKey(sku))
+                {
+                    basked.ItemsCount[sku] += 1;
+                }
+                else
+                {
+                    basked.ItemsCount.Add(sku, 1);
+                }
+            }
+
+            return true;
         }
 
         private static void ApplyOffers(Basket basked)
@@ -67,6 +89,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 

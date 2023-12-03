@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BeFaster.App.Solutions.CHK
 {
     public class Basket
     {
-        public Dictionary<char, int> ItemsCount { get; set; }
+        public Dictionary<char, int> ItemsCount { get; set; } = new Dictionary<char, int>();
 
-        public int Price { get; set; }
+        public int Price { get; set; } = 0;
     }
 }
+
 
