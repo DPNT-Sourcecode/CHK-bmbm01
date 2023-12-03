@@ -37,15 +37,16 @@ namespace BeFaster.App.Solutions.CHK
 
             if (remainingItems > 0)
             {
+                var totalToRemove = totalCount - remainingItems;
                 var itemsOrderedByValue = ItemGroup.OrderByDescending(pair => pair.Value).ToList();
 
                 foreach (var item in itemsOrderedByValue)
                 {
                     if (itemsFound.ContainsKey(item.Key))
                     {
-                        if (itemsFound[item.Key] <= (totalCount - remainingItems))
+                        if (itemsFound[item.Key] <= totalToRemove)
                         {
-                            totalCount -= itemsFound[item.Key];
+                            totalToRemove -= itemsFound[item.Key];
                             basket.ItemsCount[item.Key] -= itemsFound[item.Key];
                         }
                         else
@@ -66,6 +67,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
