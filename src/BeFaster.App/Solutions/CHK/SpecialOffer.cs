@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BeFaster.App.Solutions.CHK
+﻿namespace BeFaster.App.Solutions.CHK
 {
-    public class SpecialOffer
+    public abstract class SpecialOffer
     {
         public int Quantity { get; set; }
+
+        public abstract void ApplyOffer(Basket basket);
     }
 }
+
 

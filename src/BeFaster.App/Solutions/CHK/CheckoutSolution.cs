@@ -16,6 +16,7 @@ namespace BeFaster.App.Solutions.CHK
 
         public static int ComputePrice(string skus)
         {
+            var basket = new Basket();
             var purchasedItems = new Dictionary<char, int>();
             var price = 0;
 
@@ -56,5 +57,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
