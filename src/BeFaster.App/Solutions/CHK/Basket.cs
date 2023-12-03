@@ -8,6 +8,9 @@ namespace BeFaster.App.Solutions.CHK
 {
     public class Basket
     {
-        public Dictionary<char, int> ItemsCount = new Dictionary<char, int>();
+        public Dictionary<char, int> ItemsCount { get; set; }
+
+        public int Price { get; set; }
     }
 }
+

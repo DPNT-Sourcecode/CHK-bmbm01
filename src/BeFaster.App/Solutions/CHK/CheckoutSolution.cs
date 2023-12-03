@@ -7,7 +7,7 @@ namespace BeFaster.App.Solutions.CHK
     {
         private static readonly Dictionary<char, Item> Items = new Dictionary<char, Item>()
         {
-            { 'A', new Item { Name = 'A', Price = 50, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Quantity = 3, Value = 130 }, new DiscountSpecialOffer { Quantity = 5, Value = 200 } } } },
+            { 'A', new Item { Name = 'A', Price = 50, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Quantity = 5, Value = 200 }, new DiscountSpecialOffer { Quantity = 3, Value = 130 } } } },
             { 'B', new Item { Name = 'B', Price = 30, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Quantity = 2, Value = 45 } } } },
             { 'C', new Item { Name = 'C', Price = 20 } },
             { 'D', new Item { Name = 'D', Price = 15 } },
@@ -55,8 +55,19 @@ namespace BeFaster.App.Solutions.CHK
 
             return price;
         }
+
+        private static void FillBasket(Basket basked, string skus)
+        {
+            var basket = new Basket();
+        }
+
+        private static void ApplyOffers(Basket basked)
+        {
+            var basket = new Basket();
+        }
     }
 }
+
 
 
 
