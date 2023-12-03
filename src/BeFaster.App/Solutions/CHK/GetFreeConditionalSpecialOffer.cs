@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BeFaster.App.Solutions.CHK
+﻿namespace BeFaster.App.Solutions.CHK
 {
     public class GetFreeConditionalSpecialOffer : GetFreeSpecialOffer
     {
+        public int MinimumQuantity { get; set; }
 
         public override void ApplyOffer(Basket basket)
         {
-            throw new NotImplementedException();
+            if (basket.ItemsCount.ContainsKey(Item) && basket.ItemsCount[Item] >= MinimumQuantity)
+            {
+                base.ApplyOffer(basket);
+            }
         }
     }
 }
+

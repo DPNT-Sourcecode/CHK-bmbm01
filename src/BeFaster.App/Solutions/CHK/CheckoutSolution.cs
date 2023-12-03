@@ -10,12 +10,14 @@ namespace BeFaster.App.Solutions.CHK
             { 'B', 30 },
             { 'C', 20 },
             { 'D', 15 },
-            { 'E', 40 }
+            { 'E', 40 },
+            { 'F', 10 },
         };
 
         private static readonly List<SpecialOffer> SpecialOffers = new List<SpecialOffer>()
         {
-            new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1, FreeItemPrice = 30 },
+            new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1 },
+            new GetFreeSpecialOffer { Item = 'F', Quantity = 3, FreeItem = 'F', FreeItemQuantity = 1 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 5, Value = 200 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 3, Value = 130 },
             new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 }
@@ -77,4 +79,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 

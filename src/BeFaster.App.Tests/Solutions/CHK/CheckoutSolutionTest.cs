@@ -6,7 +6,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
     public class CheckoutSolutionTest
     {
         [Theory]
-        [InlineData("F", -1)]
+        [InlineData("Z", -1)]
         [InlineData("ABCD", 115)]
         [InlineData("AAABBCCDD", 245)]
         [InlineData("AAAAAAABBBBBCCDD", 490)]
@@ -15,6 +15,9 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [InlineData("EEB", 80)]
         [InlineData("EEEB", 120)]
         [InlineData("EEEEBB", 160)]
+        [InlineData("AAAAAAABBBBBCCDDEEF", 550)]
+        [InlineData("AAAAAAABBBBBCCDDEEFFF", 560)]
+        [InlineData("AAAAAAABBBBBCCDDEEFFFF", 560)]
         public void ComputePrices_WhenCalled_ShouldReturnPrice(string skus, int expected)
         {
             // Act
@@ -25,3 +28,4 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
