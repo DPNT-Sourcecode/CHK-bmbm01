@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BeFaster.App.Solutions.CHK
+﻿namespace BeFaster.App.Solutions.CHK
 {
     public class DiscountSpecialOffer : SpecialOffer
     {
@@ -13,10 +7,15 @@ namespace BeFaster.App.Solutions.CHK
         public override void ApplyOffer(Basket basket)
         {
             var numberOfItems = basket.ItemsCount[Item];
-            throw new NotImplementedException();
+            var numberOfSpecialOffers = numberOfItems / Quantity;
+            var numberOfSpecialOfferItems = numberOfSpecialOffers * Quantity;
+
+            basket.ItemsCount[Item] -= numberOfSpecialOfferItems;
+            basket.Price += numberOfSpecialOffers * Value;
         }
     }
 }
+
 
 
 
