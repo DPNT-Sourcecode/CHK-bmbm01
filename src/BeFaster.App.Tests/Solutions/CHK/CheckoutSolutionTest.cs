@@ -9,7 +9,9 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [InlineData("F", -1)]
         [InlineData("ABCD", 115)]
         [InlineData("AAABBCCDD", 245)]
-        [InlineData("AAAAAAABBBBBCCDD", 500)]
+        [InlineData("AAAAAAABBBBBCCDD", 490)]
+        [InlineData("AAAAAAABBBBBCCDDE", 490)]
+        [InlineData("AAAAAAABBBBBCCDDEE", 490)]
         public void ComputePrices_WhenCalled_ShouldReturnPrice(string skus, int expected)
         {
             // Act
@@ -20,4 +22,5 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
