@@ -5,8 +5,7 @@ namespace BeFaster.App.Solutions.CHK
     public static class CheckoutSolution
     {
         private static readonly Dictionary<char, int> Items = GetItems();
-
-        private static readonly List<SpecialOffer> SpecialOffers = ;
+        private static readonly List<SpecialOffer> SpecialOffers = GetSpecialOffers();
 
         public static int ComputePrice(string skus)
         {
@@ -108,9 +107,12 @@ namespace BeFaster.App.Solutions.CHK
             new DiscountSpecialOffer { Item = 'K', Quantity = 2, Value = 150 },
             new DiscountSpecialOffer { Item = 'P', Quantity = 5, Value = 200 },
             new DiscountSpecialOffer { Item = 'Q', Quantity = 3, Value = 80 },
+            new DiscountSpecialOffer { Item = 'V', Quantity = 3, Value = 130 },
+            new DiscountSpecialOffer { Item = 'V', Quantity = 2, Value = 90 },
         };
     }
 }
+
 
 
 

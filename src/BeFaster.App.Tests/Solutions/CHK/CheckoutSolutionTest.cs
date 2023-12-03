@@ -6,7 +6,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
     public class CheckoutSolutionTest
     {
         [Theory]
-        [InlineData("Z", -1)]
+        [InlineData("1", -1)]
         [InlineData("ABCD", 115)]
         [InlineData("AAABBCCDD", 245)]
         [InlineData("AAAAAAABBBBBCCDD", 490)]
@@ -28,3 +28,4 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
