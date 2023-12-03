@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BeFaster.App.Solutions.CHK
+﻿namespace BeFaster.App.Solutions.CHK
 {
     public class GetFreeSpecialOffer : SpecialOffer
     {
@@ -19,7 +13,9 @@ namespace BeFaster.App.Solutions.CHK
             var numberOfItems = basket.ItemsCount[Item];
             var numberOfSpecialOffers = numberOfItems / Quantity;
 
-            throw new NotImplementedException();
+            basket.ItemsCount[Item] -= numberOfSpecialOffers;
+            basket.Price -= FreeItemPrice * numberOfSpecialOffers;
         }
     }
 }
+
