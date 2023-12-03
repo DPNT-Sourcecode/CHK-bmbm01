@@ -23,7 +23,7 @@ namespace BeFaster.App.Solutions.CHK
                 var item = Items[entry.Key];
                 if (item.SpecialOfferQuantity > 0)
                 {
-
+                    var specialOfferCount = entry.Value % item.SpecialOfferQuantity;
                 }
                 else
                 {
@@ -54,5 +54,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
