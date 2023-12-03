@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeFaster.App.Solutions.CHK
 {
@@ -27,8 +24,12 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
+            UpdateBasket(basket, itemsFound, totalCount);
             basket.Price += (totalCount / Quantity) * Price;
+        }
 
+        private void UpdateBasket(Basket basket, Dictionary<char, int> itemsFound, int totalCount)
+        {
             var remainingItems = totalCount % Quantity;
 
             if (remainingItems > 0)
@@ -38,7 +39,7 @@ namespace BeFaster.App.Solutions.CHK
                 foreach (var item in itemsOrderedByValue)
                 {
                     if (itemsFound.ContainsKey(item.Key))
-                    { 
+                    {
                         if (itemsFound[item.Key] <= (totalCount - remainingItems))
                         {
                             totalCount -= itemsFound[item.Key];
@@ -54,9 +55,13 @@ namespace BeFaster.App.Solutions.CHK
             }
             else
             {
-
+                foreach (var item in itemsFound)
+                {
+                    basket.ItemsCount[item.Key] -= item.Value;
+                }
             }
         }
     }
 }
+
 
