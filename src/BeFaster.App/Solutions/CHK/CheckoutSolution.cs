@@ -1,5 +1,4 @@
-﻿using BeFaster.Runner.Exceptions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace BeFaster.App.Solutions.CHK
 {
@@ -7,11 +6,11 @@ namespace BeFaster.App.Solutions.CHK
     {
         private static readonly Dictionary<char, Item> Items = new Dictionary<char, Item>()
         {
-            { 'A', new Item { Name = 'A', Price = 50, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Quantity = 5, Value = 200 }, new DiscountSpecialOffer { Quantity = 3, Value = 130 } } } },
-            { 'B', new Item { Name = 'B', Price = 30, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Quantity = 2, Value = 45 } } } },
+            { 'A', new Item { Name = 'A', Price = 50, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Item = 'A', Quantity = 5, Value = 200 }, new DiscountSpecialOffer { Item = 'A', Quantity = 3, Value = 130 } } } },
+            { 'B', new Item { Name = 'B', Price = 30, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 } } } },
             { 'C', new Item { Name = 'C', Price = 20 } },
             { 'D', new Item { Name = 'D', Price = 15 } },
-            { 'E', new Item { Name = 'D', Price = 40, SpecialOffers = new List<SpecialOffer>() { new GetFreeSpecialOffer { Quantity = 2, FreeItem = 'B', FreeItemQuantity = 2 } } } }
+            { 'E', new Item { Name = 'D', Price = 40, SpecialOffers = new List<SpecialOffer>() { new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 2 } } } }
         };
 
         public static int ComputePrice(string skus)
@@ -26,6 +25,8 @@ namespace BeFaster.App.Solutions.CHK
             ApplyOffers(basket);
 
             CalculateRegularPrices(basket);
+
+            return basket.Price;
         }
 
         private static bool FillBasket(Basket basket, string skus)
@@ -65,10 +66,15 @@ namespace BeFaster.App.Solutions.CHK
 
         private static void CalculateRegularPrices(Basket basket)
         {
-
+            foreach (var entry in basket.ItemsCount)
+            {
+                var item = Items[entry.Key];
+                basket.Price += entry.Value * item.Price;
+            }
         }
     }
 }
+
 
 
 
