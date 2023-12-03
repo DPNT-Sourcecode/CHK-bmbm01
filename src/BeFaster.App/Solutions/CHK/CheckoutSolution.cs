@@ -8,8 +8,8 @@ namespace BeFaster.App.Solutions.CHK
         {
             { 'A', new Item { Name = 'A', Price = 50, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Item = 'A', Quantity = 5, Value = 200 }, new DiscountSpecialOffer { Item = 'A', Quantity = 3, Value = 130 } } } },
             { 'B', new Item { Name = 'B', Price = 30, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 } } } },
-            { 'C', new Item { Name = 'C', Price = 20 } },
-            { 'D', new Item { Name = 'D', Price = 15 } },
+            { 'C', new Item { Name = 'C', Price = 20, SpecialOffers = new List<SpecialOffer>() } },
+            { 'D', new Item { Name = 'D', Price = 15, SpecialOffers = new List<SpecialOffer>() } },
             { 'E', new Item { Name = 'E', Price = 40, SpecialOffers = new List<SpecialOffer>() { new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 2, FreeItemPrice = 30 } } } }
         };
 
@@ -53,7 +53,8 @@ namespace BeFaster.App.Solutions.CHK
 
         private static void ApplyOffers(Basket basket)
         {
-            var keys = basket.ItemsCount.Keys;
+            var keys = new List<char>(basket.ItemsCount.Keys);
+
             foreach (var key in keys)
             {
                 var item = Items[key];
@@ -75,4 +76,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
