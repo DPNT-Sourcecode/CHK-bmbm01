@@ -13,10 +13,19 @@ namespace BeFaster.App.Solutions.CHK
             { "D", 15 },
         };
 
+        private static readonly Dictionary<string, int> Discounts = new Dictionary<string, int>()
+        {
+            { "A", 50 },
+            { "B", 30 },
+            { "C", 20 },
+            { "D", 15 },
+        };
+
         public static int ComputePrice(string skus)
         {
             throw new SolutionNotImplementedException();
         }
     }
 }
+
 
