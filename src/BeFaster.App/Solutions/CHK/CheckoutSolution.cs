@@ -4,13 +4,13 @@ namespace BeFaster.App.Solutions.CHK
 {
     public static class CheckoutSolution
     {
-        private static readonly Dictionary<char, Item> Items = new Dictionary<char, Item>()
+        private static readonly Dictionary<char, int> Items = new Dictionary<char, int>()
         {
-            { 'A', new Item { Name = 'A', Price = 50 } },
-            { 'B', new Item { Name = 'B', Price = 30 } },
-            { 'C', new Item { Name = 'C', Price = 20 } },
-            { 'D', new Item { Name = 'D', Price = 15 } },
-            { 'E', new Item { Name = 'E', Price = 40 } }
+            { 'A', 50 },
+            { 'B', 30 },
+            { 'C', 20 },
+            { 'D', 15 },
+            { 'E', 40 }
         };
 
         private static readonly List<SpecialOffer> SpecialOffers = new List<SpecialOffer>()
@@ -71,9 +71,10 @@ namespace BeFaster.App.Solutions.CHK
         {
             foreach (var entry in basket.ItemsCount)
             {
-                var item = Items[entry.Key];
-                basket.Price += entry.Value * item.Price;
+                var itemValue = Items[entry.Key];
+                basket.Price += entry.Value * itemValue;
             }
         }
     }
 }
+
