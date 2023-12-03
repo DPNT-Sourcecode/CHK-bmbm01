@@ -117,7 +117,7 @@ namespace BeFaster.App.Solutions.CHK
             new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 },
             new DiscountSpecialOffer { Item = 'H', Quantity = 10, Value = 80 },
             new DiscountSpecialOffer { Item = 'H', Quantity = 5, Value = 45 },
-            new DiscountSpecialOffer { Item = 'K', Quantity = 2, Value = 150 },
+            new DiscountSpecialOffer { Item = 'K', Quantity = 2, Value = 120 },
             new DiscountSpecialOffer { Item = 'P', Quantity = 5, Value = 200 },
             new DiscountSpecialOffer { Item = 'Q', Quantity = 3, Value = 80 },
             new DiscountSpecialOffer { Item = 'V', Quantity = 3, Value = 130 },
@@ -125,3 +125,4 @@ namespace BeFaster.App.Solutions.CHK
         };
     }
 }
+
