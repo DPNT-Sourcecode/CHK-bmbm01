@@ -9,7 +9,7 @@ namespace BeFaster.App.Tests.Solutions.HLO
         public void Hello_WhenCalled_ShouldReturnString()
         {
             // Arrange
-            const string expected = "Hello world";
+            const string expected = "Hello, World!";
 
             // Act
             var result = HelloSolution.Hello("");
@@ -19,4 +19,5 @@ namespace BeFaster.App.Tests.Solutions.HLO
         }
     }
 }
+
 
