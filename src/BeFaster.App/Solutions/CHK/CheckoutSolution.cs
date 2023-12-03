@@ -15,31 +15,12 @@ namespace BeFaster.App.Solutions.CHK
 
         public static int ComputePrice(string skus)
         {
-            var price = 0;
-            var purchasedItems = GetPurchsedItemsCount(skus);
-
-            foreach(var entry in purchasedItems)
-            {
-                var item = Items[entry.Key];
-                if (item.SpecialOfferQuantity > 0)
-                {
-                    var specialOfferCount = entry.Value % item.SpecialOfferQuantity;
-                }
-                else
-                {
-                    price += entry.Value * item.Price;
-                }
-            }
-
-            return price;
-        }
-
-        private static Dictionary<char, int> GetPurchsedItemsCount(string skus)
-        {
             var purchasedItems = new Dictionary<char, int>();
+            var price = 0;
 
             foreach (var sku in skus)
             {
+
                 if (purchasedItems.ContainsKey(sku))
                 {
                     purchasedItems[sku] += 1;
@@ -50,10 +31,27 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            return purchasedItems;
+            foreach(var entry in purchasedItems)
+            {
+                var item = Items[entry.Key];
+                if (item.SpecialOfferQuantity > 0)
+                {
+                    var regularPriceItems = entry.Value % item.SpecialOfferQuantity;
+                    var specialOfferPrice = (entry.Value - regularPriceItems) / item.SpecialOfferQuantity;
+
+                    price += (regularPriceItems * item.Price) + (specialOfferPrice * item.SpecialOfferPrice);
+                }
+                else
+                {
+                    price += entry.Value * item.Price;
+                }
+            }
+
+            return price;
         }
     }
 }
+
 
 
 
