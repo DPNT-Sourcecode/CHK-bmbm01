@@ -63,6 +63,7 @@
     <Compile Include="Solutions\CHK\Basket.cs" />
     <Compile Include="Solutions\CHK\CheckoutSolution.cs" />
     <Compile Include="Solutions\CHK\DiscountSpecialOffer.cs" />
+    <Compile Include="Solutions\CHK\GetFreeConditionalSpecialOffer.cs" />
     <Compile Include="Solutions\CHK\GetFreeSpecialOffer.cs" />
     <Compile Include="Solutions\CHK\SpecialOffer.cs" />
     <Compile Include="Solutions\FIZ\FizzBuzzSolution.cs" />
@@ -88,3 +89,4 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
+
