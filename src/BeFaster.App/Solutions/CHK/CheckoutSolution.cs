@@ -10,7 +10,7 @@ namespace BeFaster.App.Solutions.CHK
             { 'B', new Item { Name = 'B', Price = 30, SpecialOffers = new List<SpecialOffer>() { new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 } } } },
             { 'C', new Item { Name = 'C', Price = 20, SpecialOffers = new List<SpecialOffer>() } },
             { 'D', new Item { Name = 'D', Price = 15, SpecialOffers = new List<SpecialOffer>() } },
-            { 'E', new Item { Name = 'E', Price = 40, SpecialOffers = new List<SpecialOffer>() { new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 2, FreeItemPrice = 30 } } } }
+            { 'E', new Item { Name = 'E', Price = 40, SpecialOffers = new List<SpecialOffer>() { new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1, FreeItemPrice = 30 } } } }
         };
 
         public static int ComputePrice(string skus)
@@ -76,5 +76,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
