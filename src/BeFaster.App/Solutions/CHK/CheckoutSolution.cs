@@ -97,8 +97,8 @@ namespace BeFaster.App.Solutions.CHK
             new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'N', Quantity = 3, FreeItem = 'M', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'R', Quantity = 3, FreeItem = 'Q', FreeItemQuantity = 1 },
+            new GetFreeSpecialOffer { Item = 'U', Quantity = 3, FreeItem = 'U', FreeItemQuantity = 1 },
             new GetFreeConditionalSpecialOffer { Item = 'F', Quantity = 3, FreeItem = 'F', FreeItemQuantity = 1, MinimumQuantity = 3 },
-            new GetFreeConditionalSpecialOffer { Item = 'U', Quantity = 3, FreeItem = 'U', FreeItemQuantity = 1, MinimumQuantity = 3 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 5, Value = 200 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 3, Value = 130 },
             new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 },
@@ -112,6 +112,7 @@ namespace BeFaster.App.Solutions.CHK
         };
     }
 }
+
 
 
 
