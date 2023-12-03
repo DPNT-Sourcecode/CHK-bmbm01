@@ -65,6 +65,7 @@
     <Compile Include="Solutions\CHK\DiscountSpecialOffer.cs" />
     <Compile Include="Solutions\CHK\GetFreeConditionalSpecialOffer.cs" />
     <Compile Include="Solutions\CHK\GetFreeSpecialOffer.cs" />
+    <Compile Include="Solutions\CHK\GroupDiscountSpecialOffer.cs" />
     <Compile Include="Solutions\CHK\SpecialOffer.cs" />
     <Compile Include="Solutions\FIZ\FizzBuzzSolution.cs" />
     <Compile Include="Solutions\HLO\HelloSolution.cs" />

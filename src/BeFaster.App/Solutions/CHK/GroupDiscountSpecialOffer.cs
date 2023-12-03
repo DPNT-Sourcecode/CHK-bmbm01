@@ -53,13 +53,12 @@ namespace BeFaster.App.Solutions.CHK
                 basket.ItemsCount[entry.Key] -= entry.Value;
             }
 
-
-            // Remove all items from basket
-            // Add multiplier price
+            basket.Price += (totalCount / Quantity) * Price;
         }
 
     }
 }
+
 
 
 
