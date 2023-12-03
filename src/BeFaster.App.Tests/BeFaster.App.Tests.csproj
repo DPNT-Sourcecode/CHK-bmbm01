@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Solutions\HLO\HelloSolutionTest.cs" />
     <Compile Include="Solutions\SUM\SumSolutionTest.cs" />
     <Compile Include="Solutions\TST\OneTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

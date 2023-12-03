@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BeFaster.App.Solutions.HLO;
+using Xunit;
 
 namespace BeFaster.App.Tests.Solutions.HLO
 {
     public class HelloSolutionTest
     {
+        [Fact]
+        public void Hello_WhenCalled_ShouldReturnString()
+        {
+            // Arrange
+            const string expected = "Hello world";
+
+            // Act
+            var result = HelloSolution.Hello("");
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }
+
