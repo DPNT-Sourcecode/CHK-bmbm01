@@ -8,7 +8,7 @@ namespace BeFaster.App.Solutions.CHK
 {
     public class GroupDiscountSpecialOffer : SpecialOffer
     {
-        public HashSet<char> ItemGroup { get; set; } = new HashSet<char>();
+        public Dictionary<char, int> ItemGroup { get; set; } = new Dictionary<char, int>();
 
         public int Price { get; set; }
 
@@ -17,12 +17,12 @@ namespace BeFaster.App.Solutions.CHK
             var itemsFound = new Dictionary<char, int>();
             var totalCount = 0;
 
-            foreach (var item in ItemGroup)
+            foreach (var entry in ItemGroup)
             {
-                if (basket.ItemsCount.ContainsKey(item))
+                if (basket.ItemsCount.ContainsKey(entry.Key))
                 {
-                    var count = basket.ItemsCount[item];
-                    itemsFound.Add(item, count);
+                    var count = basket.ItemsCount[entry.Key];
+                    itemsFound.Add(entry.Key, count);
                     totalCount += count;
                 }
             }
@@ -36,7 +36,7 @@ namespace BeFaster.App.Solutions.CHK
             }
             else
             {
-                var leastValuableItems = 
+                var leastValuableItems = ItemGroup.OrderBy(pair => pair.Value);
                 while(remainingItems > 0)
                 {
 
@@ -63,3 +63,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+

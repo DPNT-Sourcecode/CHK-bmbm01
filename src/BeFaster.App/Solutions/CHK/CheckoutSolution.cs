@@ -99,13 +99,14 @@ namespace BeFaster.App.Solutions.CHK
                 ItemGroup = new Dictionary<char, int>()
                 {
                     { 'S', 5 },
-                    { 'T', 5 }
-                    { 'X', 5 }
-                    { 'Y', 5 }
-                    { 'Z', 5 }'T', 'X', 'Y', 'Z'
-                }
-                
-            }, Quantity = 3, Price = 45 },
+                    { 'T', 5 },
+                    { 'X', 5 },
+                    { 'Y', 5 },
+                    { 'Z', 5 }
+                }, 
+                Quantity = 3, 
+                Price = 45 
+            },
             new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'N', Quantity = 3, FreeItem = 'M', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'R', Quantity = 3, FreeItem = 'Q', FreeItemQuantity = 1 },
@@ -124,3 +125,4 @@ namespace BeFaster.App.Solutions.CHK
         };
     }
 }
+
