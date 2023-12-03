@@ -98,11 +98,11 @@ namespace BeFaster.App.Solutions.CHK
             { 
                 ItemGroup = new Dictionary<char, int>()
                 {
-                    { 'S', 5 },
-                    { 'T', 5 },
-                    { 'X', 5 },
-                    { 'Y', 5 },
-                    { 'Z', 5 }
+                    { 'S', 20 },
+                    { 'T', 20 },
+                    { 'X', 17 },
+                    { 'Y', 20 },
+                    { 'Z', 21 }
                 }, 
                 Quantity = 3, 
                 Price = 45 
@@ -125,4 +125,5 @@ namespace BeFaster.App.Solutions.CHK
         };
     }
 }
+
 

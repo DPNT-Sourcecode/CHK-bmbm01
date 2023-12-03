@@ -36,7 +36,7 @@ namespace BeFaster.App.Solutions.CHK
             }
             else
             {
-                var leastValuableItems = ItemGroup.OrderBy(pair => pair.Value);
+                var leastValuableItems = itemsFound.OrderBy(pair => pair.Value).ToList();
                 while(remainingItems > 0)
                 {
 
@@ -63,4 +63,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
