@@ -24,7 +24,7 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            if (totalCount > Quantity)
+            if (totalCount >= Quantity)
             {
                 UpdateBasket(basket, itemsFound, totalCount);
                 basket.Price += (totalCount / Quantity) * Price;
@@ -66,6 +66,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
