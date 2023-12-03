@@ -36,7 +36,11 @@ namespace BeFaster.App.Solutions.CHK
             }
             else
             {
+                var leastValuableItems = 
+                while(remainingItems > 0)
+                {
 
+                }
             }
         }
 
@@ -59,8 +63,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
-
-
-
