@@ -8,7 +8,7 @@ namespace BeFaster.App.Solutions.CHK
 {
     public class Item
     {
-        public string Name { get; set; }
+        public char Name { get; set; }
 
         public int Price { get; set; }
 
@@ -17,3 +17,4 @@ namespace BeFaster.App.Solutions.CHK
         public int SpecialOfferPrice { get; set; }
     }
 }
+
