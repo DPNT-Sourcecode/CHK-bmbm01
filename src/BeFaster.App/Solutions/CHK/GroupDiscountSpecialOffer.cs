@@ -24,8 +24,11 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            UpdateBasket(basket, itemsFound, totalCount);
-            basket.Price += (totalCount / Quantity) * Price;
+            if (totalCount > Quantity)
+            {
+                UpdateBasket(basket, itemsFound, totalCount);
+                basket.Price += (totalCount / Quantity) * Price;
+            }
         }
 
         private void UpdateBasket(Basket basket, Dictionary<char, int> itemsFound, int totalCount)
@@ -63,5 +66,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
