@@ -6,10 +6,11 @@
 
         public override void ApplyOffer(Basket basket)
         {
-            if (basket.ItemsCount.ContainsKey(Item) && basket.ItemsCount[Item] >= MinimumQuantity)
+            if (basket.ItemsCount.ContainsKey(Item) && basket.ItemsCount[Item] > MinimumQuantity)
             {
                 base.ApplyOffer(basket);
             }
         }
     }
 }
+
