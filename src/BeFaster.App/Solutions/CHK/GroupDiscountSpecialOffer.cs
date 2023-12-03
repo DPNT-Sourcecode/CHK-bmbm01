@@ -39,7 +39,7 @@ namespace BeFaster.App.Solutions.CHK
                 {
                     if (itemsFound.ContainsKey(item.Key))
                     { 
-                        if (itemsFound[item.Key] <= totalCount)
+                        if (itemsFound[item.Key] <= (totalCount - remainingItems))
                         {
                             totalCount -= itemsFound[item.Key];
                             basket.ItemsCount[item.Key] -= itemsFound[item.Key];
@@ -52,6 +52,11 @@ namespace BeFaster.App.Solutions.CHK
                     }
                 }
             }
+            else
+            {
+
+            }
         }
     }
 }
+
