@@ -9,6 +9,3 @@
         public abstract void ApplyOffer(Basket basket);
     }
 }
-
-
-

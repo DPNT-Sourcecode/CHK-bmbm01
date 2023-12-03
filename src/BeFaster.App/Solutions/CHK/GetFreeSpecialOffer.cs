@@ -11,7 +11,15 @@ namespace BeFaster.App.Solutions.CHK
         public char FreeItem { get; set; }
 
         public int FreeItemQuantity { get; set; }
+
+        public int FreeItemPrice { get; set; }
+
+        public override void ApplyOffer(Basket basket)
+        {
+            var numberOfItems = basket.ItemsCount[Item];
+            var numberOfSpecialOffers = numberOfItems / Quantity;
+
+            throw new NotImplementedException();
+        }
     }
 }
-
-

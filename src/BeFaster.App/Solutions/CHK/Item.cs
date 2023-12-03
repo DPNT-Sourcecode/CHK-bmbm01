@@ -15,4 +15,3 @@ namespace BeFaster.App.Solutions.CHK
         public List<SpecialOffer> SpecialOffers { get; set; }
     }
 }
-

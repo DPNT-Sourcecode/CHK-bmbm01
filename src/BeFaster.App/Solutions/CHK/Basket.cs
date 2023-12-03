@@ -9,5 +9,3 @@ namespace BeFaster.App.Solutions.CHK
         public int Price { get; set; } = 0;
     }
 }
-
-
