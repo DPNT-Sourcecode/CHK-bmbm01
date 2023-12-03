@@ -27,6 +27,8 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
+            basket.Price += (totalCount / Quantity) * Price;
+
             var remainingItems = totalCount % Quantity;
 
             if (remainingItems > 0)
@@ -35,30 +37,21 @@ namespace BeFaster.App.Solutions.CHK
 
                 foreach (var item in itemsOrderedByValue)
                 {
-                    if (itemsFound.ContainsKey(item.Key) && itemsFound[item.Key] <= totalCount)
-                    {
-                        totalCount -= itemsFound[item.Key];
-                        basket.ItemsCount[item.Key] -= item.Value;
-                    }
-                    else
-                    {
-                        basket.ItemsCount[item.Key] -= item.Value - remainingItems;
-                        break;
+                    if (itemsFound.ContainsKey(item.Key))
+                    { 
+                        if (itemsFound[item.Key] <= totalCount)
+                        {
+                            totalCount -= itemsFound[item.Key];
+                            basket.ItemsCount[item.Key] -= itemsFound[item.Key];
+                        }
+                        else
+                        {
+                            basket.ItemsCount[item.Key] -= itemsFound[item.Key] - remainingItems;
+                            break;
+                        }
                     }
                 }
             }
-
-            basket.Price += (totalCount / Quantity) * Price;
         }
-
     }
 }
-
-
-
-
-
-
-
-
-
