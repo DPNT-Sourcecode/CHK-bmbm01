@@ -96,15 +96,21 @@ namespace BeFaster.App.Solutions.CHK
         private static List<SpecialOffer> GetSpecialOffers() => new List<SpecialOffer>()
         {
             new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1 },
+            new GetFreeSpecialOffer { Item = 'N', Quantity = 3, FreeItem = 'M', FreeItemQuantity = 1 },
+            new GetFreeSpecialOffer { Item = 'R', Quantity = 3, FreeItem = 'Q', FreeItemQuantity = 1 },
             new GetFreeConditionalSpecialOffer { Item = 'F', Quantity = 3, FreeItem = 'F', FreeItemQuantity = 1, MinimumQuantity = 3 },
+            new GetFreeConditionalSpecialOffer { Item = 'U', Quantity = 3, FreeItem = 'U', FreeItemQuantity = 1, MinimumQuantity = 3 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 5, Value = 200 },
             new DiscountSpecialOffer { Item = 'A', Quantity = 3, Value = 130 },
             new DiscountSpecialOffer { Item = 'B', Quantity = 2, Value = 45 },
             new DiscountSpecialOffer { Item = 'H', Quantity = 10, Value = 80 },
             new DiscountSpecialOffer { Item = 'H', Quantity = 5, Value = 45 },
             new DiscountSpecialOffer { Item = 'K', Quantity = 2, Value = 150 },
+            new DiscountSpecialOffer { Item = 'P', Quantity = 5, Value = 200 },
+            new DiscountSpecialOffer { Item = 'Q', Quantity = 3, Value = 80 },
         };
     }
 }
+
 
 
