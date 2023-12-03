@@ -1,9 +1,4 @@
 ﻿using BeFaster.App.Solutions.CHK;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BeFaster.App.Tests.Solutions.CHK
@@ -25,5 +20,6 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
 
