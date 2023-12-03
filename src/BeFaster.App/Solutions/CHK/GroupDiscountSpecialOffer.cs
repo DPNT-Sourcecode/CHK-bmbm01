@@ -29,12 +29,7 @@ namespace BeFaster.App.Solutions.CHK
 
             var remainingItems = totalCount % Quantity;
 
-            if (remainingItems == 0)
-            {
-                // Remove all items from basket
-                // Add multiplier price
-            }
-            else
+            if (remainingItems > 0)
             {
                 var leastValuableItems = itemsFound.OrderBy(pair => pair.Value).ToList();
 
@@ -43,34 +38,29 @@ namespace BeFaster.App.Solutions.CHK
                     if (leastValueableItem.Value <= remainingItems)
                     {
                         remainingItems -= leastValueableItem.Value;
+                        itemsFound[leastValueableItem.Key] -= leastValueableItem.Value;
+                    }
+
+                    if (remainingItems == 0)
+                    {
+                        break;
                     }
                 }
-                while(remainingItems > 0)
-                {
-
-                }
             }
-        }
 
-        private void RemoveItems(Basket basket)
-        {
-            var foundItems = new Dictionary<char, int>();
-
-            for (var item in ItemGroup)
+            foreach (var entry in itemsFound)
             {
-                if (basket.ItemsCount[item])
-                {
-                                                                                                                                                                                                                                                                                                                                                                                                                        
-                }
+                basket.ItemsCount[entry.Key] -= entry.Value;
             }
+
+
+            // Remove all items from basket
+            // Add multiplier price
         }
 
-        private bool HasEnoughItems()
-        {
-            
-        }
     }
 }
+
 
 
 
