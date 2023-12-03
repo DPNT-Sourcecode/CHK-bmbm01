@@ -27,7 +27,9 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            if (totalCount % Quantity == 0)
+            var remainingItems = totalCount % Quantity;
+
+            if (remainingItems == 0)
             {
                 // Remove all items from basket
                 // Add multiplier price
@@ -57,6 +59,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
