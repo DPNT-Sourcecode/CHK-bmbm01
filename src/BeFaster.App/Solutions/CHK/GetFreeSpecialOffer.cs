@@ -10,7 +10,7 @@
 
         public override void ApplyOffer(Basket basket)
         {
-            if (basket.ItemsCount.ContainsKey(Item))
+            if (basket.ItemsCount.ContainsKey(FreeItem))
             {
                 var numberOfItems = basket.ItemsCount[Item];
                 var numberOfSpecialOffers = numberOfItems / Quantity;
@@ -21,6 +21,7 @@
         }
     }
 }
+
 
 
 

@@ -71,8 +71,12 @@ namespace BeFaster.App.Solutions.CHK
             foreach (var entry in basket.ItemsCount)
             {
                 var item = Items[entry.Key];
-                basket.Price += entry.Value * item.Price;
+                if (entry.Value > 0)
+                {
+                    basket.Price += entry.Value * item.Price;
+                }
             }
         }
     }
 }
+
