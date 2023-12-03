@@ -27,8 +27,22 @@ namespace BeFaster.App.Solutions.CHK
         private void RemoveItems(Basket basket)
         {
             var foundItems = new Dictionary<char, int>();
+
+            for (var item in ItemGroup)
+            {
+                if (basket.ItemsCount[item])
+                {
+                                                                                                                                                                                                                                                                                                                                                                                                                        
+                }
+            }
+        }
+
+        private bool HasEnoughItems()
+        {
+
         }
     }
 }
+
 
 
