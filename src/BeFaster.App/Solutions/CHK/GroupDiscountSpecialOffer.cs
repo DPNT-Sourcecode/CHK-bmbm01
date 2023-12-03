@@ -17,9 +17,18 @@ namespace BeFaster.App.Solutions.CHK
             for (var item in ItemGroup)
             {
                 if (basket.ItemsCount[])
+                {
+
+                }
             }
             throw new NotImplementedException();
         }
+
+        private void RemoveItems(Basket basket)
+        {
+            var foundItems = new Dictionary<char, int>();
+        }
     }
 }
+
 
