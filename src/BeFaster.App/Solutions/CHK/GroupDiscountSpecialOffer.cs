@@ -37,20 +37,15 @@ namespace BeFaster.App.Solutions.CHK
                 {
                     if (itemsFound.ContainsKey(item.Key) && itemsFound[item.Key] <= totalCount)
                     {
-                        remainingItems -= leastValueableItem.Value;
-                        itemsFound[leastValueableItem.Key] -= leastValueableItem.Value;
+                        totalCount -= itemsFound[item.Key];
+                        basket.ItemsCount[item.Key] -= item.Value;
                     }
-
-                    if (remainingItems == 0)
+                    else
                     {
+                        basket.ItemsCount[item.Key] -= item.Value - remainingItems;
                         break;
                     }
                 }
-            }
-
-            foreach (var entry in itemsFound)
-            {
-                basket.ItemsCount[entry.Key] -= entry.Value;
             }
 
             basket.Price += (totalCount / Quantity) * Price;
@@ -58,6 +53,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
