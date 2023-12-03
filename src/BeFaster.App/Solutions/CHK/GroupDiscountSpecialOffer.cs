@@ -31,11 +31,11 @@ namespace BeFaster.App.Solutions.CHK
 
             if (remainingItems > 0)
             {
-                var leastValuableItems = itemsFound.OrderBy(pair => pair.Value).ToList();
+                var leastValuableItems = ItemGroup.OrderBy(pair => pair.Value).ToList();
 
                 foreach (var leastValueableItem in leastValuableItems)
                 {
-                    if (leastValueableItem.Value <= remainingItems)
+                    if (itemsFound.ContainsKey(leastValueableItem.Key) && leastValueableItem.Value <= remainingItems)
                     {
                         remainingItems -= leastValueableItem.Value;
                         itemsFound[leastValueableItem.Key] -= leastValueableItem.Value;
@@ -58,6 +58,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
