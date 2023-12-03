@@ -5,19 +5,21 @@ namespace BeFaster.App.Tests.Solutions.HLO
 {
     public class HelloSolutionTest
     {
-        [Fact]
-        public void Hello_WhenCalled_ShouldReturnString()
+        [Theory]
+        [InlineData("John")]
+        public void Hello_WhenCalled_ShouldReturnString(string friendName)
         {
             // Arrange
-            const string expected = "Hello, World!";
+            var expected = "Hello, " + friendName + "!";
 
             // Act
-            var result = HelloSolution.Hello("");
+            var result = HelloSolution.Hello(friendName);
 
             // Assert
             Assert.Equal(expected, result);
         }
     }
 }
+
 
 
