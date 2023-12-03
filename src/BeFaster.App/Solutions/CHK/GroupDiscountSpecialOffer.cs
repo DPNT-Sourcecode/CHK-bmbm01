@@ -14,7 +14,12 @@ namespace BeFaster.App.Solutions.CHK
 
         public override void ApplyOffer(Basket basket)
         {
+            for (var item in ItemGroup)
+            {
+                if (basket.ItemsCount[])
+            }
             throw new NotImplementedException();
         }
     }
 }
+

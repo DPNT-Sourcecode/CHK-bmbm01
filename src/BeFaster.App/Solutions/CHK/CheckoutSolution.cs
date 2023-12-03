@@ -94,7 +94,7 @@ namespace BeFaster.App.Solutions.CHK
 
         private static List<SpecialOffer> GetSpecialOffers() => new List<SpecialOffer>()
         {
-
+            new GroupDiscountSpecialOffer { ItemGroup = new HashSet<char>() { 'S', 'T', 'X', 'Y', 'Z' }, Quantity = 3, Price = 45 },
             new GetFreeSpecialOffer { Item = 'E', Quantity = 2, FreeItem = 'B', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'N', Quantity = 3, FreeItem = 'M', FreeItemQuantity = 1 },
             new GetFreeSpecialOffer { Item = 'R', Quantity = 3, FreeItem = 'Q', FreeItemQuantity = 1 },
@@ -113,4 +113,5 @@ namespace BeFaster.App.Solutions.CHK
         };
     }
 }
+
 
